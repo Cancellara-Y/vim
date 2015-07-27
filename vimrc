@@ -1,6 +1,6 @@
 "~/.vimrc (configuration file for vim only)
 
-" Encoding related#
+" Encoding related
 set fileencodings=utf-8,gb2312,gbk,gb18030
 set termencoding=utf-8
 
@@ -369,3 +369,11 @@ let g:ycm_key_list_previous_completion = ['<c-p>', '<Up>']
 " whether to show balloons  press <leader>l to toogle
 let g:syntastic_enable_balloons = 1
 let g:syntastic_always_populate_loc_list = 1
+
+let TagBarOpen=1
+
+
+nmap <Leader>tb :TagbarToggle<CR>
+let g:tagbar_ctags_bin='/usr/bin/ctags'
+let g:tagbar_width=30
+autocmd BufReadPost *.cpp,*.c,*.h,*.hpp,*.cc,*.cxx call tagbar#autoopen()
